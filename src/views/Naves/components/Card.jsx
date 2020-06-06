@@ -13,7 +13,7 @@ const MyCard = ({ nave }) => {
   }
 
   return (
-    <Card className="mr-2 bg-light border-light card-shadow ">
+    <Card className="mr-3 bg-light border-light card-shadow ">
       <CardImg top width="100%" src={imgRandom} alt="Card image cap" />
       <CardBody>
         <div>
@@ -24,8 +24,8 @@ const MyCard = ({ nave }) => {
             </div>
           </CardTitle>
         </div>
-        <CardSubtitle className="border-car mb-4">{descripcionNave}</CardSubtitle>
-        <CardSubtitle className="p mb-2 text-right">
+        <CardSubtitle className="border-car mb-5">{descripcionNave}</CardSubtitle>
+        <CardSubtitle className="p mb-2 text-right ml-auto locate">
           <i>{rutaNave}</i>
         </CardSubtitle>
         <CardText></CardText>
