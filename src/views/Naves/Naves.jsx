@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import firebase from 'services/firebase';
+import MyCard from './components/Card';
 
 const Naves = () => {
   const [naves, setNaves] = useState([]);
@@ -22,11 +23,13 @@ const Naves = () => {
   return (
     <div>
       <h1>Hol Mundo</h1>
-      <ul>
-        {naves.map((item) => (
-          <li key={item.nombreNave}>{item.nombreNave}</li>
-        ))}
-      </ul>
+      <div className="container pt-2">
+        <div className="d-flex">
+          {naves.map((nave) => (
+            <MyCard nave={nave} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
