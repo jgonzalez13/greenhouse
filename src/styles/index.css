@@ -10,6 +10,7 @@ body {
   font-family: 'DINPro-medium';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #182026;
 }
 
 code {
@@ -19,4 +20,8 @@ code {
 #root {
   width: 100%;
   height: 100%;
+}
+
+.dinBold {
+  font-family: 'DINPro-bold';
 }

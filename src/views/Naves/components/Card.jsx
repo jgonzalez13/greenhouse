@@ -17,18 +17,16 @@ const MyCard = ({ nave }) => {
       <CardImg top width="100%" src={imgRandom} alt="Card image cap" />
       <CardBody>
         <div>
-          <CardTitle className="h5 ">Nave: {nombreNave}</CardTitle>
+          <CardTitle className="h5 ">
+            <div className="d-flex align-items-center">
+              <h4 className="dinBold">{nombreNave}</h4>
+              <h5 className="ml-auto">{idNave}</h5>
+            </div>
+          </CardTitle>
         </div>
-        <CardSubtitle>ID: {idNave}</CardSubtitle>
-        <br />
-        <CardSubtitle className="border-car">
-          Descripcion:
-          <br /> {descripcionNave}
-        </CardSubtitle>
-        <CardSubtitle className="p">
-          <br />
-          Ubicacion: <br />
-          {rutaNave}
+        <CardSubtitle className="border-car mb-4">{descripcionNave}</CardSubtitle>
+        <CardSubtitle className="p mb-2 text-right">
+          <i>{rutaNave}</i>
         </CardSubtitle>
         <CardText></CardText>
         <Button onClick={toNaveView} className="btn-block" color="info">
