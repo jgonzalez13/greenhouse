@@ -25,8 +25,8 @@ const Naves = () => {
       <h1>Hol Mundo</h1>
       <div className="container pt-2">
         <div className="d-flex">
-          {naves.map((nave) => (
-            <MyCard nave={nave} />
+          {naves.map((nave, i) => (
+            <MyCard key={i} nave={nave} />
           ))}
         </div>
       </div>
