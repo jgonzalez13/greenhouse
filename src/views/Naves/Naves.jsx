@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import firebase from 'services/firebase';
 import MyCard from './components/Card';
-import './Naves.css';
 
 const Naves = () => {
   const [naves, setNaves] = useState([]);
@@ -22,7 +21,7 @@ const Naves = () => {
   }, []);
 
   return (
-    <div className="cards-containers">
+    <div className="home-container">
       <div className="container">
         <div className="d-flex mx-auto">
           {naves.map((nave, i) => (
