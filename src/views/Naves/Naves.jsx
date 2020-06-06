@@ -23,8 +23,8 @@ const Naves = () => {
   return (
     <div>
       <h1>Hol Mundo</h1>
-      <div className="container pt-2">
-        <div className="d-flex">
+      <div className="container mt-5">
+        <div className="d-flex mx-auto">
           {naves.map((nave, i) => (
             <MyCard key={i} nave={nave} />
           ))}
