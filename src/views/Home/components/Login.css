@@ -1,0 +1,15 @@
+.login-btn {
+  background-color: transparent;
+  color: #182026;
+  z-index: 1;
+}
+
+.login-btn:hover {
+  background: rgba(167, 182, 194, 0.3);
+  color: #182026;
+}
+
+.login-btn:focus {
+  outline: rgba(19, 124, 189, 0.6) auto 2px;
+  outline-offset: 2px;
+}
