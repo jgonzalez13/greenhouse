@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0px;
+  max-height: 100vh;
+}
+.D {
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.titulo h2 {
+  border-bottom: 3px solid rgba(138, 138, 138, 0.671);
+}
+.titulo {
+  margin-bottom: 10px;
+}
+.titulo2 {
+  text-align: center;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.item {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+.item h1 {
+  font-size: 1.5em;
+  border-bottom: 3px solid rgba(138, 138, 138, 0.671);
+}
+.datos-n {
+  background-color: #ffffff;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px rgb(0, 0, 0, 0.3);
+}
+.sectionDATEs {
+  display: flex;
+  text-align: center;
+}
+.sectionDATEs div {
+  flex: 1;
+  font-size: 2em;
+  margin: 1px;
+}
+.msw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mt {
+  border-right: 3px solid rgba(138, 138, 138, 0.671);
+}
