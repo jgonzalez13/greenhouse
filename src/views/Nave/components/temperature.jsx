@@ -53,9 +53,7 @@ const dataSource = {
 
 class MyTemperature extends React.Component {
   render() {
-    return (
-      <ReactFusioncharts type="column2d" width="100%" height="100%" dataFormat="JSON" dataSource={dataSource} />
-    );
+    return <ReactFusioncharts type="column2d" width="100%" dataFormat="JSON" dataSource={dataSource} />;
   }
 }
 export default MyTemperature;

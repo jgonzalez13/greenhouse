@@ -24,12 +24,15 @@ const MyCard = ({ nave }) => {
             </div>
           </CardTitle>
         </div>
-        <CardSubtitle className="border-car mb-5">{descripcionNave}</CardSubtitle>
+        <CardSubtitle className="border-car mb-5">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio culpa natus labore voluptatum odit ullam,
+          debitis, consectetur amet ut asperiores eveniet eos assumenda. Ut ratione rem saepe obcaecati ullam
+          nihil.
+        </CardSubtitle>
         <CardSubtitle className="p mb-2 text-right ml-auto locate">
           <i>{rutaNave}</i>
         </CardSubtitle>
-        <CardText></CardText>
-        <Button onClick={toNaveView} className="btn-block" color="info">
+        <Button onClick={toNaveView} className="btn-block " color="info">
           DATOS
         </Button>
       </CardBody>

@@ -21,13 +21,11 @@ const Naves = () => {
   }, []);
 
   return (
-    <div className="home-container">
-      <div className="container">
-        <div className="d-flex mx-auto">
-          {naves.map((nave, i) => (
-            <MyCard key={i} nave={nave} />
-          ))}
-        </div>
+    <div className="container">
+      <div className="d-flex mx-auto">
+        {naves.map((nave, i) => (
+          <MyCard key={i} nave={nave} />
+        ))}
       </div>
     </div>
   );
