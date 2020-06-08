@@ -8,8 +8,10 @@ body {
 }
 .D {
   z-index: 1;
-  width: 100%;
+  overflow: auto;
   display: flex;
+  width: 70%;
+  height: 100%;
   flex-direction: column;
 }
 .titulo h2 {

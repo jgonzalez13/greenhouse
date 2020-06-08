@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import firebase from 'services/firebase';
 import MyCard from './components/Card';
+import AddNaveCard from './components/AddNaveCard';
 
 const Naves = () => {
   const [naves, setNaves] = useState([]);
@@ -26,6 +27,7 @@ const Naves = () => {
         {naves.map((nave, i) => (
           <MyCard key={i} nave={nave} />
         ))}
+        <AddNaveCard />
       </div>
     </div>
   );

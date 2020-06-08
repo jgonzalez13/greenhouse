@@ -2,6 +2,10 @@
   border-top: 2px solid rgb(211, 209, 209);
 }
 
+.card-shadow {
+  width: 35%;
+}
+
 .card-shadow:hover {
   box-shadow: 2px 5px 10px rgb(0, 0, 0, 0.3);
   transition-duration: 0.5s;
@@ -9,4 +13,25 @@
 
 .locate {
   width: 70% !important;
+}
+
+.btn-disable {
+  border: 0;
+  background-color: #f8f9fa;
+  height: 100%;
+  width: 100%;
+  outline: none !important;
+}
+
+.btn-disable:hover {
+  background-color: #f8f9fa !important;
+  color: #17a2b8;
+}
+
+.btn-disable:hover svg path {
+  fill: #17a2b8 !important;
+}
+
+.btn-disable:active {
+  outline: none !important;
 }
