@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import './Card.css';
 
 const MyCard = ({ nave }) => {

@@ -17,9 +17,9 @@ const Nave = ({ location }) => {
         <h5>Ruta: {rutaNave}</h5>
       </div>
 
-      <InfoSensor sensor={sensorDHT11} />
-      <InfoSensor sensor={sensorFotocelda} />
-      <InfoSensor sensor={sensorPresion} />
+      <InfoSensor sensor={sensorDHT11} idNave={idNave} />
+      <InfoSensor sensor={sensorFotocelda} idNave={idNave} />
+      <InfoSensor sensor={sensorPresion} idNave={idNave} />
     </div>
   );
 };

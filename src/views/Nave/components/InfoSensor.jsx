@@ -2,8 +2,10 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBan, faPencilAlt, faEye } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'reactstrap';
+import { useHistory } from 'react-router-dom';
 
-const InfoSensor = ({ sensor, name }) => {
+const InfoSensor = ({ sensor, idNave }) => {
+  const history = useHistory();
   const {
     idSensor,
     msgValorMaximoSensor,
@@ -12,6 +14,10 @@ const InfoSensor = ({ sensor, name }) => {
     valorMaximoSensor,
     valorMinimoSensor,
   } = sensor;
+
+  function goToDatos() {
+    history.push({ pathname: `${idNave}/datos/${idSensor}`, state: { sensor: sensor } });
+  }
   return (
     <div className="datos-n">
       <div className="titulo text-center">
@@ -47,7 +53,7 @@ const InfoSensor = ({ sensor, name }) => {
               <Button color="info" className="mr-5">
                 <FontAwesomeIcon icon={faPencilAlt} size="sm" className="mr-2" />
               </Button>
-              <Button color="success">
+              <Button onClick={goToDatos} color="success">
                 <FontAwesomeIcon icon={faEye} size="sm" className="mr-2" />
               </Button>
             </div>
