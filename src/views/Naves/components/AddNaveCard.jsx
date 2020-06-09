@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Card, CardBody } from 'reactstrap';
+import FormNave from './FormNave';
 import Modal from 'shared/Modal';
 import './Card.css';
 
@@ -18,7 +19,9 @@ const AddNaveCard = () => {
           <h4>Ańadir Nave</h4>
         </button>
       </CardBody>
-      <Modal modal={modal} toggle={toggleModal} title="Añadir Nave"></Modal>
+      <Modal modal={modal} toggle={toggleModal} title="Añadir Nave">
+        <FormNave />
+      </Modal>
     </Card>
   );
 };
