@@ -10,7 +10,7 @@ body {
   z-index: 1;
   overflow: auto;
   display: flex;
-  width: 70%;
+  width: 80%;
   height: 100%;
   flex-direction: column;
 }
@@ -34,7 +34,6 @@ body {
   border-bottom: 3px solid rgba(138, 138, 138, 0.671);
 }
 .datos-n {
-  background-color: #ffffff;
   margin: 20px;
   padding: 10px;
   border-radius: 10px;
@@ -54,6 +53,9 @@ body {
   justify-content: center;
   align-items: center;
 }
-.mt {
+.mt-r {
   border-right: 3px solid rgba(138, 138, 138, 0.671);
+}
+.mt-l {
+  border-left: 3px solid rgba(138, 138, 138, 0.671);
 }

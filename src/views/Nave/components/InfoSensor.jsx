@@ -1,11 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBan, faPencilAlt, faEye } from '@fortawesome/free-solid-svg-icons';
+import { faBan, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'reactstrap';
-import { useHistory } from 'react-router-dom';
 
-const InfoSensor = ({ sensor, idNave }) => {
-  const history = useHistory();
+const InfoSensor = ({ sensor }) => {
   const {
     idSensor,
     msgValorMaximoSensor,
@@ -15,11 +13,8 @@ const InfoSensor = ({ sensor, idNave }) => {
     valorMinimoSensor,
   } = sensor;
 
-  function goToDatos() {
-    history.push({ pathname: `${idNave}/datos/${idSensor}`, state: { sensor: sensor } });
-  }
   return (
-    <div className="datos-n">
+    <div className="datos-n bg-light">
       <div className="titulo text-center">
         <h2>Datos Sensor</h2>
       </div>
@@ -35,7 +30,7 @@ const InfoSensor = ({ sensor, idNave }) => {
         </div>
       </div>
       <div className="sectionDATEs ">
-        <div className="pl-5 text-left mt">
+        <div className="pl-5 text-left mt-r pt-3">
           <h5>ID: {idSensor}</h5>
           <h5>Tipo: {tipoSensor}</h5>
           <h3>Valor Maximo: {valorMaximoSensor}</h3>
@@ -43,8 +38,8 @@ const InfoSensor = ({ sensor, idNave }) => {
           <h5>mensaje: {msgValorMaximoSensor}</h5>
           <h5>mensaje: {msgValorMinimoSensor}</h5>
         </div>
-        <div className="p-5 mt"></div>
-        <div className="p-5 mx-auto ">
+        <div></div>
+        <div className="p-5 mx-auto mt-l ">
           <div className="msw">
             <div className="mx-auto">
               <Button color="danger" className="mr-5">
@@ -52,9 +47,6 @@ const InfoSensor = ({ sensor, idNave }) => {
               </Button>
               <Button color="info" className="mr-5">
                 <FontAwesomeIcon icon={faPencilAlt} size="sm" className="mr-2" />
-              </Button>
-              <Button onClick={goToDatos} color="success">
-                <FontAwesomeIcon icon={faEye} size="sm" className="mr-2" />
               </Button>
             </div>
           </div>

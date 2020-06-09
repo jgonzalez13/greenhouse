@@ -7,19 +7,19 @@ const Nave = ({ location }) => {
   const { nombreNave, descripcionNave, idNave, rutaNave, sensores } = location.state.nave;
   const { sensorDHT11, sensorFotocelda, sensorPresion } = sensores;
   return (
-    <div className="D">
-      <div className="datos-n">
+    <div className="D ">
+      <div className="datos-n bg-light">
         <div className="titulo">
-          <h2>{nombreNave}</h2>
+          <h2>NAVE {nombreNave}</h2>
         </div>
         <h3 className="mb-3">ID: {idNave}</h3>
         <h4 className="mb-3">{descripcionNave}</h4>
         <h5>Ruta: {rutaNave}</h5>
       </div>
 
-      <InfoSensor sensor={sensorDHT11} idNave={idNave} />
-      <InfoSensor sensor={sensorFotocelda} idNave={idNave} />
-      <InfoSensor sensor={sensorPresion} idNave={idNave} />
+      <InfoSensor sensor={sensorDHT11} />
+      <InfoSensor sensor={sensorFotocelda} />
+      <InfoSensor sensor={sensorPresion} />
     </div>
   );
 };
