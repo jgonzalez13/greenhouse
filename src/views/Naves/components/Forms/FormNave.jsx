@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
 import { Row, Col, Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap';
-import * as yup from 'yup';
 import FormField from 'shared/FormField';
 import FormTap from './FormTap';
 import classnames from 'classnames';
-
-const validations = yup.object().shape({
-  name: yup.string().required(),
-  description: yup.string().min(200).required(),
-  location: yup.string().required(),
-});
 
 const FormNave = () => {
   const [activeTab, setActiveTab] = useState('1');

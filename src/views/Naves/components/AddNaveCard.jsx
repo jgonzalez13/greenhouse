@@ -4,12 +4,11 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Card, CardBody } from 'reactstrap';
 import FormNave from './Forms/FormNave';
 import Modal from 'shared/FormModal';
+import { initialValues, NaveValidations } from './Forms/NaveValidation';
 import './Card.css';
 
 const AddNaveCard = () => {
   const [modal, setModal] = useState(false);
-
-  const initialValues = { name: '', description: '', location: '' };
 
   const toggleModal = () => setModal(!modal);
 
@@ -21,7 +20,13 @@ const AddNaveCard = () => {
           <h4>Añadir Nave</h4>
         </button>
       </CardBody>
-      <Modal initialValues={initialValues} modal={modal} toggle={toggleModal} title="Añadir Nave">
+      <Modal
+        initialValues={initialValues}
+        modal={modal}
+        toggle={toggleModal}
+        title="Añadir Nave"
+        validationSchema={NaveValidations}
+      >
         <FormNave />
       </Modal>
     </Card>
