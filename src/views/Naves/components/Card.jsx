@@ -35,6 +35,9 @@ const MyCard = ({ nave }) => {
         <Button onClick={toNaveView} className="btn-block " color="info">
           DATOS
         </Button>
+        <Button className="RojoCoqueto btn-block" color="transparent">
+          ELIMINAR
+        </Button>
       </CardBody>
     </Card>
   );
