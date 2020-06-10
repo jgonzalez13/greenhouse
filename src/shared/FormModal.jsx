@@ -3,7 +3,7 @@ import { Formik, Form } from 'formik';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Firebase from 'services/firebase';
 
-const ModalComponet = ({ children, initialValues, modal, title, toggle, validations }) => {
+const FormModal = ({ children, initialValues, modal, title, toggle, validations }) => {
   const onLoggin = (values) => {
     Firebase.createNave(values.idNave, values);
   };
@@ -28,4 +28,4 @@ const ModalComponet = ({ children, initialValues, modal, title, toggle, validati
   );
 };
 
-export default ModalComponet;
+export default FormModal;

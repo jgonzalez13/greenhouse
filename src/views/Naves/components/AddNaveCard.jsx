@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Card, CardBody } from 'reactstrap';
 import FormNave from './Forms/FormNave';
-import Modal from 'shared/Modal';
+import Modal from 'shared/FormModal';
 import './Card.css';
 
 const AddNaveCard = () => {

@@ -1,27 +1,23 @@
-import React, { useContext, Suspense, lazy } from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import PrivateRoute from './private/PrivateRoute';
 import PublicRoute from './public/PublicRoute';
 import { UserStore } from 'containers/context/User.context';
-import Spin from 'shared/Spin';
-
-const HomeView = lazy(() => import('views/Nave/Nave'));
-const NavesView = lazy(() => import('views/Naves/Naves'));
-const NaveView = lazy(() => import('views/Nave/Nave'));
+import HomeView from 'views/Nave/Nave';
+import NavesView from 'views/Naves/Naves';
+import NaveView from 'views/Nave/Nave';
 
 function AppRouter() {
   const { auth } = useContext(UserStore);
   return (
     <Router>
-      <Suspense fallback={<Spin />}>
-        <div className="background-container">
-          <Switch>
-            <PublicRoute path="/" component={HomeView} auth={auth} exact />
-            <PrivateRoute path="/naves" component={NavesView} auth={auth} exact />
-            <PrivateRoute path="/naves/:id" component={NaveView} auth={auth} exact />
-          </Switch>
-        </div>
-      </Suspense>
+      <div className="background-container">
+        <Switch>
+          <PublicRoute path="/" component={HomeView} auth={auth} exact />
+          <PrivateRoute path="/naves" component={NavesView} auth={auth} exact />
+          <PrivateRoute path="/naves/:id" component={NaveView} auth={auth} exact />
+        </Switch>
+      </div>
     </Router>
   );
 }
