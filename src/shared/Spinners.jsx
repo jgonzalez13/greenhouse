@@ -5,6 +5,7 @@ const Spinners = () => (
   <>
     <div>
       <Spinner animation="border" role="status"></Spinner>
+      <div>CARGANDO</div>
     </div>
   </>
 );

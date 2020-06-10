@@ -30,7 +30,7 @@ const Naves = () => {
         ))}
         <AddNaveCard />
 
-        <Spinners />
+        <Spinners></Spinners>
       </div>
     </div>
   );
