@@ -4,26 +4,28 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Firebase from 'services/firebase';
 
 const FormModal = ({ children, initialValues, modal, title, toggle, validationSchema }) => {
-  const onLoggin = (values) => {
+  const onCompletForm = (values) => {
     Firebase.createNave(values.idNave, values);
     toggle();
   };
 
   return (
     <Modal isOpen={modal} toggle={toggle}>
-      <Formik validationSchema={validationSchema} initialValues={initialValues} onSubmit={onLoggin}>
-        <Form>
-          <ModalHeader toggle={toggle}>{title}</ModalHeader>
-          <ModalBody>{children}</ModalBody>
-          <ModalFooter>
-            <Button type="submit" color="info">
-              Guardar
-            </Button>{' '}
-            <Button color="transparent" className="RojoCoqueto" onClick={toggle}>
-              Cancel
-            </Button>
-          </ModalFooter>
-        </Form>
+      <Formik validationSchema={validationSchema} initialValues={initialValues} onSubmit={onCompletForm}>
+        {(props) => (
+          <Form>
+            <ModalHeader toggle={toggle}>{title}</ModalHeader>
+            <ModalBody>{children(props)}</ModalBody>
+            <ModalFooter>
+              <Button type="submit" color="info">
+                Guardar
+              </Button>{' '}
+              <Button color="transparent" className="RojoCoqueto" onClick={toggle}>
+                Cancel
+              </Button>
+            </ModalFooter>
+          </Form>
+        )}
       </Formik>
     </Modal>
   );

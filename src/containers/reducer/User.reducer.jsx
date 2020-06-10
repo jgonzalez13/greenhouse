@@ -1,5 +1,6 @@
 const initialState = {
   auth: true,
+  naves: [],
 };
 
 const actions = {

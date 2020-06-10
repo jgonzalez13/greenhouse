@@ -7,6 +7,7 @@ const initialValues = {
   name: '',
   rutaNave: '',
   descripcionNave: '',
+  status: true,
   sensores: {
     sensorFotocelda: {
       idSensor: '',

@@ -27,7 +27,7 @@ const AddNaveCard = () => {
         title="Añadir Nave"
         validationSchema={NaveValidations}
       >
-        <FormNave />
+        {({ values }) => <FormNave idNave={values.idNave} />}
       </Modal>
     </Card>
   );

@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Row, Col, Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap';
 import FormField from 'shared/FormField';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import FormTap from './FormTap';
+import { UserStore } from 'containers/context/User.context';
 import classnames from 'classnames';
 
-const FormNave = () => {
+const FormNave = ({ idNave }) => {
+  const { naves } = useContext(UserStore);
   const [activeTab, setActiveTab] = useState('1');
 
   const toggle = (tab) => {
     if (activeTab !== tab) setActiveTab(tab);
   };
+
+  function actvieNave() {
+    return naves.filter((nave) => nave.idNave === idNave && !nave.status).length > 0;
+  }
 
   return (
     <div>
@@ -25,7 +31,12 @@ const FormNave = () => {
         </Col>
         <Col sm="6">
           <div className="d-flex justify-content-center">
-            <FontAwesomeIcon color="#4BB543" icon={faCheckCircle} size="lg" className="mr-2" />
+            <FontAwesomeIcon
+              color={actvieNave() ? '#4BB543' : '#FC5F5F'}
+              icon={actvieNave() ? faCheckCircle : faTimesCircle}
+              size="lg"
+              className="mr-2"
+            />
           </div>
         </Col>
       </Row>
