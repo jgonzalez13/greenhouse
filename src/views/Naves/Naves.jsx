@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import firebase from 'services/firebase';
 import MyCard from './components/Card';
 import AddNaveCard from './components/AddNaveCard';
-import Spin from '../../shared/Smodel';
+import Spin from 'shared/Spin';
 
 const Naves = () => {
   const [naves, setNaves] = useState([]);
@@ -22,6 +22,8 @@ const Naves = () => {
     getNaves();
   }, []);
 
+  if (!naves.length) return <Spin />;
+
   return (
     <div className="container">
       <div className="d-flex mx-auto">
@@ -30,7 +32,6 @@ const Naves = () => {
         ))}
         <AddNaveCard />
       </div>
-      <Spin />
     </div>
   );
 };

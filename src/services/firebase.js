@@ -10,7 +10,9 @@ class Firebase {
     this.db = app.database();
   }
 
-  getNaves() {}
+  createNave(id, data) {
+    this.db.ref(`naves/nave${id}`).set(data)
+  }
 }
 
 const firebase = new Firebase();
