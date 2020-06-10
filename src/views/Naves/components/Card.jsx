@@ -5,7 +5,7 @@ import './Card.css';
 
 const MyCard = ({ nave }) => {
   const history = useHistory();
-  const { nombreNave, descripcionNave, idNave, rutaNave } = nave;
+  const { nombreNave, idNave, rutaNave } = nave;
   const imgRandom = `https://source.unsplash.com/1600x900/?nature,water`;
 
   function toNaveView() {
