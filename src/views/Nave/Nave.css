@@ -59,3 +59,22 @@ body {
 .mt-l {
   border-left: 3px solid rgba(138, 138, 138, 0.671);
 }
+.content {
+  display: flex;
+  flex: 1;
+}
+.datos {
+  flex: 1;
+  display: flex;
+
+  border-left: 3px solid rgba(138, 138, 138, 0.671);
+}
+.sensores {
+  width: 60%;
+  order: -1;
+  display: flex;
+}
+
+.da {
+  margin-left: 20px;
+}
