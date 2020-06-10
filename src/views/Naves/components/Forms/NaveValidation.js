@@ -7,33 +7,34 @@ const initialValues = {
   name: '',
   rutaNave: '',
   descripcionNave: '',
-  sensores: { sensorDHT11: '', sensorFotocelda: '', sensorPresion: '' },
-  sensorFotocelda: {
-    idSensor: '',
-    msgValorMaximoSensor: '',
-    msgValorMinimoSensor: '',
-    tipoSensor: '',
-    valorMaximoSensor: '',
-    ValorMinimoSensor: '',
-    status: 'false',
-  },
-  sensorPresion: {
-    idSensor: '',
-    msgValorMaximoSensor: '',
-    msgValorMinimoSensor: '',
-    tipoSensor: '',
-    valorMaximoSensor: '',
-    ValorMinimoSensor: '',
-    status: 'false',
-  },
-  sensorDHT11: {
-    idSensor: '',
-    msgValorMaximoSensor: '',
-    msgValorMinimoSensor: '',
-    tipoSensor: '',
-    valorMaximoSensor: '',
-    ValorMinimoSensor: '',
-    status: 'false',
+  sensores: {
+    sensorFotocelda: {
+      idSensor: '',
+      msgValorMaximoSensor: '',
+      msgValorMinimoSensor: '',
+      tipoSensor: '',
+      valorMaximoSensor: '',
+      ValorMinimoSensor: '',
+      status: 'false',
+    },
+    sensorPresion: {
+      idSensor: '',
+      msgValorMaximoSensor: '',
+      msgValorMinimoSensor: '',
+      tipoSensor: '',
+      valorMaximoSensor: '',
+      ValorMinimoSensor: '',
+      status: 'false',
+    },
+    sensorDHT11: {
+      idSensor: '',
+      msgValorMaximoSensor: '',
+      msgValorMinimoSensor: '',
+      tipoSensor: '',
+      valorMaximoSensor: '',
+      ValorMinimoSensor: '',
+      status: 'false',
+    },
   },
 };
 
@@ -64,6 +65,7 @@ const NaveValidations = yup.object().shape({
 
       valorMaximoSensor: yup.number(isNumber).required(isRequired),
     }),
+
     sensorPresion: yup.object().shape({
       idSensor: yup.number(isNumber).min(4, isMin).required(isRequired),
 
@@ -77,6 +79,7 @@ const NaveValidations = yup.object().shape({
 
       valorMaximoSensor: yup.number(isNumber).required(isRequired),
     }),
+
     sensorFotocelda: yup.object().shape({
       idSensor: yup.number(isNumber).min(4, isMin).required(isRequired),
 

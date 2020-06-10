@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Row, Col, Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap';
 import FormField from 'shared/FormField';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import FormTap from './FormTap';
 import classnames from 'classnames';
 
@@ -21,7 +23,11 @@ const FormNave = () => {
         <Col sm="6">
           <FormField name="idNave" placeholder="Ingrese el id" />
         </Col>
-        <Col sm="6"></Col>
+        <Col sm="6">
+          <div className="d-flex justify-content-center">
+            <FontAwesomeIcon color="#4BB543" icon={faCheckCircle} size="lg" className="mr-2" />
+          </div>
+        </Col>
       </Row>
 
       <Row>
