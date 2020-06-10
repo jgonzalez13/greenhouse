@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import firebase from 'services/firebase';
 import MyCard from './components/Card';
 import AddNaveCard from './components/AddNaveCard';
-import Spinners from '../../shared/Spinners';
+import Spin from '../../shared/Smodel';
 
 const Naves = () => {
   const [naves, setNaves] = useState([]);
@@ -29,9 +29,8 @@ const Naves = () => {
           <MyCard key={i} nave={nave} />
         ))}
         <AddNaveCard />
-
-        <Spinners></Spinners>
       </div>
+      <Spin />
     </div>
   );
 };
