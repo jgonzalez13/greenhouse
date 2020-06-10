@@ -15,10 +15,10 @@ const FormModal = ({ children, initialValues, modal, title, toggle, validations 
           <ModalHeader toggle={toggle}>{title}</ModalHeader>
           <ModalBody>{children}</ModalBody>
           <ModalFooter>
-            <Button type="submit" color="primary" onClick={toggle}>
+            <Button type="submit" color="info" onClick={toggle}>
               Guardar
             </Button>{' '}
-            <Button color="secondary" onClick={toggle}>
+            <Button color="transparent" className="RojoCoqueto" onClick={toggle}>
               Cancel
             </Button>
           </ModalFooter>
