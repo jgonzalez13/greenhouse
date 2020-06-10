@@ -35,3 +35,8 @@
 .btn-disable:active {
   outline: none !important;
 }
+
+.RojoCoqueto {
+  background-color: rgb(252, 95, 95) !important;
+  color: white !important;
+}
