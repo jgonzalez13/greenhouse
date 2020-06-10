@@ -28,7 +28,7 @@ const FormNave = ({ idNave, edit }) => {
 
       <Row>
         <Col sm="6">
-          <FormField name="idNave" placeholder="Ingrese el id" disable={edit} />
+          <FormField name="idNave" placeholder="Ingrese el id" disabled={edit} />
         </Col>
         <Col sm="6">
           <div className="d-flex justify-content-center">

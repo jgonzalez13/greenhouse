@@ -2,7 +2,7 @@ import React from 'react';
 import { Field } from 'formik';
 import { FormGroup, Input } from 'reactstrap';
 
-const FormField = ({ disable, name, placeholder, component, rows }) => (
+const FormField = ({ disabled, name, placeholder, component, rows }) => (
   <FormGroup>
     <Field name={name}>
       {({ field, form, meta }) => (
@@ -10,7 +10,7 @@ const FormField = ({ disable, name, placeholder, component, rows }) => (
           <Input
             {...field}
             className={`w-100 inputFormik ${meta.touched && meta.error ? 'RojoCoqueto-border' : ''}`}
-            disable={disable}
+            disabled={disabled}
             placeholder={placeholder}
             type={component}
             rows={rows}
