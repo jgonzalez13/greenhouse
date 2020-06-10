@@ -14,36 +14,59 @@ const initialValues = {
       msgValorMinimoSensor: '',
       tipoSensor: '',
       valorMaximoSensor: '',
-      ValorMinimoSensor: '',
-      status: 'false',
+      valorMinimoSensor: '',
+      status: false,
     },
     sensorPresion: {
       idSensor: '',
-      msgValorMaximoSensor: '',
-      msgValorMinimoSensor: '',
+      msgValorMaximoSensor: {
+        presion: '',
+        altitud: '',
+      },
+      msgValorMinimoSensor: {
+        presion: '',
+        altitud: '',
+      },
       tipoSensor: '',
-      valorMaximoSensor: '',
-      ValorMinimoSensor: '',
-      status: 'false',
+      valorMaximoSensor: {
+        presion: '',
+        altitud: '',
+      },
+      valorMinimoSensor: {
+        presion: '',
+        altitud: '',
+      },
+      status: false,
     },
     sensorDHT11: {
       idSensor: '',
-      msgValorMaximoSensor: '',
-      msgValorMinimoSensor: '',
+      msgValorMaximoSensor: {
+        temperatura: '',
+        humedad: '',
+      },
+      msgValorMinimoSensor: {
+        temperatura: '',
+        humedad: '',
+      },
       tipoSensor: '',
-      valorMaximoSensor: '',
-      ValorMinimoSensor: '',
-      status: 'false',
+      valorMaximoSensor: {
+        temperatura: '',
+        humedad: '',
+      },
+      valorMinimoSensor: {
+        temperatura: '',
+        humedad: '',
+      },
+      status: false,
     },
   },
 };
 
-const isNumber = 'REQUIERE SER NUMERICO';
 const isMin = 'SE REQUIEREN CUATRO DIGITOS';
 const isRequired = 'ESTE CAMPO ES REQUERIDO';
 
 const NaveValidations = yup.object().shape({
-  idNave: yup.number().min(4, isMin).required(isRequired),
+  idNave: yup.string().min(4, isMin).required(isRequired),
 
   nombreNave: yup.string().required(isRequired),
 
@@ -52,46 +75,81 @@ const NaveValidations = yup.object().shape({
   descripcionNave: yup.string().required(isRequired),
 
   sensores: yup.object().shape({
+    // DHT11
     sensorDHT11: yup.object().shape({
-      idSensor: yup.number(isNumber).min(4, isMin).required(isRequired),
+      idSensor: yup.string().min(4, isMin).required(isRequired),
 
       tipoSensor: yup.string().required(isRequired),
 
-      msgValorMinimoSensor: yup.string().required(isRequired),
+      msgValorMinimoSensor: yup.object().shape({
+        temperatura: yup.string().required(isRequired),
 
-      valorMinimoSensor: yup.number(isNumber).required(isRequired),
+        humedad: yup.string().required(isRequired),
+      }),
 
-      msgValorMaximoSensor: yup.string().required(isRequired),
+      valorMinimoSensor: yup.object().shape({
+        temperatura: yup.string().required(isRequired),
 
-      valorMaximoSensor: yup.number(isNumber).required(isRequired),
+        humedad: yup.string().required(isRequired),
+      }),
+
+      msgValorMaximoSensor: yup.object().shape({
+        temperatura: yup.string().required(isRequired),
+
+        humedad: yup.string().required(isRequired),
+      }),
+
+      valorMaximoSensor: yup.object().shape({
+        temperatura: yup.string().required(isRequired),
+
+        humedad: yup.string().required(isRequired),
+      }),
     }),
 
+    // BMP180
     sensorPresion: yup.object().shape({
-      idSensor: yup.number(isNumber).min(4, isMin).required(isRequired),
+      idSensor: yup.string().min(4, isMin).required(isRequired),
 
       tipoSensor: yup.string().required(isRequired),
 
-      msgValorMinimoSensor: yup.string().required(isRequired),
+      msgValorMinimoSensor: yup.object().shape({
+        presion: yup.string().required(isRequired),
 
-      valorMinimoSensor: yup.number(isNumber).required(isRequired),
+        altitud: yup.string().required(isRequired),
+      }),
 
-      msgValorMaximoSensor: yup.string().required(isRequired),
+      valorMinimoSensor: yup.object().shape({
+        presion: yup.string().required(isRequired),
 
-      valorMaximoSensor: yup.number(isNumber).required(isRequired),
+        altitud: yup.string().required(isRequired),
+      }),
+
+      msgValorMaximoSensor: yup.object().shape({
+        presion: yup.string().required(isRequired),
+
+        altitud: yup.string().required(isRequired),
+      }),
+
+      valorMaximoSensor: yup.object().shape({
+        presion: yup.string().required(isRequired),
+
+        altitud: yup.string().required(isRequired),
+      }),
     }),
 
+    // Fotocelda
     sensorFotocelda: yup.object().shape({
-      idSensor: yup.number(isNumber).min(4, isMin).required(isRequired),
+      idSensor: yup.string().min(4, isMin).required(isRequired),
 
       tipoSensor: yup.string().required(isRequired),
 
       msgValorMinimoSensor: yup.string().required(isRequired),
 
-      valorMinimoSensor: yup.number(isNumber).required(isRequired),
+      valorMinimoSensor: yup.string().required(isRequired),
 
       msgValorMaximoSensor: yup.string().required(isRequired),
 
-      valorMaximoSensor: yup.number(isNumber).required(isRequired),
+      valorMaximoSensor: yup.string().required(isRequired),
     }),
   }),
 });

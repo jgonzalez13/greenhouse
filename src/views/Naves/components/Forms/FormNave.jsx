@@ -70,7 +70,7 @@ const FormNave = () => {
 
       <TabContent activeTab={activeTab}>
         <TabPane tabId="1">
-          <FormTap nameSensor="sensorDHT11" />
+          <FormTap nameSensor="sensorDHT11" twoValues={true} firstValue="humedad" secondValue="temperatura" />
         </TabPane>
 
         <TabPane tabId="2">
@@ -78,7 +78,7 @@ const FormNave = () => {
         </TabPane>
 
         <TabPane tabId="3">
-          <FormTap nameSensor="sensorPresion" />
+          <FormTap nameSensor="sensorPresion" twoValues={true} firstValue="presion" secondValue="altitud" />
         </TabPane>
       </TabContent>
     </div>
