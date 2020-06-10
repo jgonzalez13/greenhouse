@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
-import './Card.css';
+import FormNave from './Forms/FormNave';
+import Modal from 'shared/FormModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faTrash, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import { NaveValidations } from './Forms/NaveValidation';
+import './Card.css';
 
 const MyCard = ({ nave }) => {
+  const [modal, setModal] = useState(false);
   const history = useHistory();
   const { nombreNave, idNave, rutaNave } = nave;
   const imgRandom = `https://source.unsplash.com/1600x900/?nature,water`;
+
+  const toggleModal = () => setModal(!modal);
 
   function toNaveView() {
     history.push({ pathname: `naves/${idNave}`, state: { nave: nave } });
@@ -37,12 +43,22 @@ const MyCard = ({ nave }) => {
         <Button onClick={toNaveView} className=" VerdeCoqueto btn-block " color="transparent">
           <FontAwesomeIcon icon={faEye} className="mr-2 text-center"></FontAwesomeIcon> VER DATOS
         </Button>
-        <Button className="btn-block text-center" color="info">
+        <Button className="btn-block text-center" color="info" onClick={toggleModal}>
           <FontAwesomeIcon icon={faPencilAlt} className="mr-2"></FontAwesomeIcon>EDITAR
         </Button>
         <Button className="RojoCoqueto btn-block text-center" color="transparent">
           <FontAwesomeIcon icon={faTrash} className="mr-2"></FontAwesomeIcon> ELIMINAR
         </Button>
+
+        <Modal
+          initialValues={nave}
+          modal={modal}
+          toggle={toggleModal}
+          title="Editar Nave"
+          validationSchema={NaveValidations}
+        >
+          {({ values }) => <FormNave idNave={values.idNave} edit={true} />}
+        </Modal>
       </CardBody>
     </Card>
   );

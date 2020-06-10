@@ -15,7 +15,7 @@ const FormModal = ({ children, initialValues, modal, title, toggle, validationSc
         {(props) => (
           <Form>
             <ModalHeader toggle={toggle}>{title}</ModalHeader>
-            <ModalBody>{children(props)}</ModalBody>
+            <ModalBody className="pb-0">{children(props)}</ModalBody>
             <ModalFooter>
               <Button type="submit" color="info">
                 Guardar

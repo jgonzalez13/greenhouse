@@ -7,7 +7,7 @@ import FormTap from './FormTap';
 import { UserStore } from 'containers/context/User.context';
 import classnames from 'classnames';
 
-const FormNave = ({ idNave }) => {
+const FormNave = ({ idNave, edit }) => {
   const { naves } = useContext(UserStore);
   const [activeTab, setActiveTab] = useState('1');
 
@@ -16,6 +16,7 @@ const FormNave = ({ idNave }) => {
   };
 
   function actvieNave() {
+    if (edit) return true;
     return naves.filter((nave) => nave.idNave === idNave && !nave.status).length > 0;
   }
 
@@ -27,14 +28,14 @@ const FormNave = ({ idNave }) => {
 
       <Row>
         <Col sm="6">
-          <FormField name="idNave" placeholder="Ingrese el id" />
+          <FormField name="idNave" placeholder="Ingrese el id" disable={edit} />
         </Col>
         <Col sm="6">
           <div className="d-flex justify-content-center">
             <FontAwesomeIcon
               color={actvieNave() ? '#4BB543' : '#FC5F5F'}
               icon={actvieNave() ? faCheckCircle : faTimesCircle}
-              size="lg"
+              size="2x"
               className="mr-2"
             />
           </div>

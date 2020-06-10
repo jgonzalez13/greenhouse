@@ -1,11 +1,23 @@
 import React from 'react';
-import { ErrorMessage, Field } from 'formik';
-import { FormGroup } from 'reactstrap';
+import { Field } from 'formik';
+import { FormGroup, Input } from 'reactstrap';
 
-const FormField = ({ name, placeholder, component, rows }) => (
+const FormField = ({ disable, name, placeholder, component, rows }) => (
   <FormGroup>
-    <Field className="w-100" name={name} placeholder={placeholder} component={component} rows={rows} />
-    <ErrorMessage className="Form-Error ml-2 text-danger" component="span" name={name} />
+    <Field name={name}>
+      {({ field, form, meta }) => (
+        <>
+          <Input
+            {...field}
+            className={`w-100 inputFormik ${meta.touched && meta.error ? 'RojoCoqueto-border' : ''}`}
+            disable={disable}
+            placeholder={placeholder}
+            type={component}
+            rows={rows}
+          />
+        </>
+      )}
+    </Field>
   </FormGroup>
 );
 

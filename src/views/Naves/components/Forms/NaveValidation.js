@@ -16,7 +16,7 @@ const initialValues = {
       tipoSensor: '',
       valorMaximoSensor: '',
       valorMinimoSensor: '',
-      status: false,
+      status: true,
     },
     sensorPresion: {
       idSensor: '',
@@ -37,7 +37,7 @@ const initialValues = {
         presion: '',
         altitud: '',
       },
-      status: false,
+      status: true,
     },
     sensorDHT11: {
       idSensor: '',
@@ -58,7 +58,7 @@ const initialValues = {
         temperatura: '',
         humedad: '',
       },
-      status: false,
+      status: true,
     },
   },
 };

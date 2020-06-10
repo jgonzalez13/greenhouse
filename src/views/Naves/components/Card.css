@@ -40,12 +40,19 @@
   background-color: rgb(252, 95, 95) !important;
   color: white !important;
 }
+
 .RojoCoqueto:hover {
   background-color: rgb(231, 83, 83) !important;
+}
+
+.RojoCoqueto-border {
+  border: 2px solid rgb(231, 83, 83) !important;
+  border-radius: 5px;
 }
 .VerdeCoqueto:hover {
   background-color: rgb(70, 167, 63) !important;
 }
+
 .VerdeCoqueto {
   background-color: #4bb543 !important;
   color: white !important;

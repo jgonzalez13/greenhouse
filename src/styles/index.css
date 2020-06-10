@@ -48,3 +48,23 @@ code {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.7);
 }
+
+.inputFormik {
+  outline-color: none !important;
+  border-radius: 5px;
+  border-color: #182026;
+}
+
+.inputFormik:focus {
+  border: 2px solid #17a2b8 !important;
+  box-shadow: 0 0 0 0.2rem #fff !important;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: #17a2b8 !important;
+}
+
+.modal-dialog {
+  max-width: 700px !important;
+}
