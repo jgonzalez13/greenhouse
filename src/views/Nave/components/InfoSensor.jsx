@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBan, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'reactstrap';
 
-const InfoSensor = ({ sensor }) => {
+const InfoSensor = ({ children, sensor }) => {
   const {
     idSensor,
     msgValorMaximoSensor,
@@ -38,7 +38,7 @@ const InfoSensor = ({ sensor }) => {
           <h5>mensaje: {msgValorMaximoSensor}</h5>
           <h5>mensaje: {msgValorMinimoSensor}</h5>
         </div>
-        <div></div>
+        <div>{children}</div>
         <div className="p-5 mx-auto mt-l ">
           <div className="msw">
             <div className="mx-auto">

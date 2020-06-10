@@ -1,7 +1,9 @@
 import React from 'react';
-import MyTemperature from './components/temperature';
 import InfoSensor from './components/InfoSensor';
 import './Nave.css';
+import FotoCelda from './components/FotoCelda';
+import Dht11Humedad from './components/Dht11Humedad';
+import Dht11Temperatura from './components/Dht11Temperatura';
 
 const Nave = ({ location }) => {
   const { nombreNave, descripcionNave, idNave, rutaNave, sensores } = location.state.nave;
@@ -17,9 +19,14 @@ const Nave = ({ location }) => {
         <h5>Ruta: {rutaNave}</h5>
       </div>
 
-      <InfoSensor sensor={sensorDHT11} />
-      <InfoSensor sensor={sensorFotocelda} />
-      <InfoSensor sensor={sensorPresion} />
+      <InfoSensor sensor={sensorDHT11}>
+        <Dht11Humedad datos={sensorDHT11.datosSensor} />
+        <Dht11Temperatura datos={sensorDHT11.datosSensor} />
+      </InfoSensor>
+      <InfoSensor sensor={sensorFotocelda}>
+        <FotoCelda datos={sensorFotocelda.datosSensor} />
+      </InfoSensor>
+      {/* <InfoSensor sensor={sensorPresion} /> */}
     </div>
   );
 };
