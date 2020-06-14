@@ -8,9 +8,9 @@ charts(FusionCharts);
 const SensorPresionPresion = ({ datos }) => {
   const [data, setData] = useState({
     chart: {
-      caption: 'PRESION',
-      yaxisname: 'NIVEL de HUMEDAD',
-      subcaption: '[DHT11]',
+      caption: 'Intensidad de luz',
+      yaxisname: 'INTENSIDAD',
+      subcaption: '[FOTOCELDA]',
       numbersuffix: '',
       rotatelabels: '1',
       setadaptiveymin: '1',
