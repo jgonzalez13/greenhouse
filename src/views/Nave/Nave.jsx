@@ -7,6 +7,7 @@ import Dht11Temperatura from './components/Dht11Temperatura';
 import SensorPresionAltitud from './components/SensorPresionAltitud';
 import SensorPresioPresion from './components/SensorPresionPresion';
 import { Label, Input, Container, Row, Col } from 'reactstrap';
+import Tabla from './components/TB';
 
 const Nave = ({ location }) => {
   const { nombreNave, descripcionNave, idNave, rutaNave, sensores } = location.state.nave;
@@ -55,23 +56,23 @@ const Nave = ({ location }) => {
         </div>
       </div>
 
-      {sensorDHT11.status && sensorDHT11.datosSensor > 0 && (
+      {/* {sensorDHT11.status && sensorDHT11.datosSensor > 0 && (
         <InfoSensor sensor={sensorDHT11}>
           <Dht11Humedad datos={sensorDHT11.datosSensor} />
           <Dht11Temperatura datos={sensorDHT11.datosSensor} />
         </InfoSensor>
-      )}
-      {sensorFotocelda.status && sensorFotocelda.datosSensor > 0 && (
-        <InfoSensor sensor={sensorFotocelda}>
-          <FotoCelda datos={sensorFotocelda.datosSensor} />
-        </InfoSensor>
-      )}
-      {sensorPresion.status && sensorPresion.datosSensor > 0 && (
-        <InfoSensor sensor={sensorPresion}>
-          <SensorPresionAltitud datos={sensorPresion.datosSensor} />
-          <SensorPresioPresion datos={sensorPresion.datosSensor} />
-        </InfoSensor>
-      )}
+      )} */}
+
+      <InfoSensor sensor={sensorFotocelda} />
+      <FotoCelda datos={sensorFotocelda.datosSensor} />
+
+      <Dht11Humedad datos={sensorDHT11.datosSensor} />
+      <Dht11Temperatura datos={sensorDHT11.datosSensor} />
+      <div>--------------------</div>
+      <SensorPresioPresion datos={sensorPresion.datosSensor} />
+      <SensorPresionAltitud datos={sensorPresion.datosSensor} />
+      <div>--------------------</div>
+      <Tabla datos={sensorFotocelda.datosSensor} />
     </div>
   );
 };

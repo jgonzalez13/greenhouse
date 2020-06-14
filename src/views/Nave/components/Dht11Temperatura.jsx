@@ -28,13 +28,13 @@ const Dht11Humedad = ({ datos }) => {
     const newData = datos.map((item) => {
       return {
         label: item.idDatoSensor,
-        value: item.datoSensor.humedad,
+        value: item.datoSensor.temperatura,
       };
     });
     setData({ ...data, data: newData });
   }
   console.log(data);
-  return <ReactFusioncharts type="line" width="100%" height="100%" dataFormat="JSON" dataSource={data} />;
+  return <ReactFusioncharts type="line" width="100%" height="40%" dataFormat="JSON" dataSource={data} />;
 };
 
 export default Dht11Humedad;
