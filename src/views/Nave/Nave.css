@@ -16,7 +16,7 @@ body {
   flex-direction: column;
 }
 .titulo h2 {
-  border-bottom: 3px solid rgba(138, 138, 138, 0.671);
+  border-bottom: 2px solid rgba(138, 138, 138, 0.151);
 }
 .titulo {
   margin-bottom: 10px;
@@ -32,7 +32,7 @@ body {
 }
 .item h1 {
   font-size: 1.5em;
-  border-bottom: 3px solid rgba(138, 138, 138, 0.671);
+  border-bottom: 2px solid rgba(138, 138, 138, 0.151);
 }
 .datos-n {
   background-color: white;
@@ -59,10 +59,10 @@ body {
   align-items: center;
 }
 .mt-r {
-  border-right: 3px solid rgba(138, 138, 138, 0.671);
+  border-right: 2px solid rgba(138, 138, 138, 0.151);
 }
 .mt-l {
-  border-left: 3px solid rgba(138, 138, 138, 0.671);
+  border-left: 2px solid rgba(138, 138, 138, 0.151);
 }
 .content {
   display: flex;
@@ -72,7 +72,7 @@ body {
   flex: 1;
   display: flex;
 
-  border-left: 3px solid rgba(138, 138, 138, 0.671);
+  border-left: 2px solid rgba(138, 138, 138, 0.151);
 }
 .sensores {
   width: 60%;
@@ -117,4 +117,13 @@ body {
 
 .ss {
   display: flex;
+}
+
+.bordecuadro {
+  border: 2px solid rgba(138, 138, 138, 0.151);
+  border-radius: 5px;
+}
+.titlo {
+  text-align: center;
+  border-bottom: 2px solid rgba(138, 138, 138, 0.151);
 }
