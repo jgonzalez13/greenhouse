@@ -15,6 +15,8 @@ const SensorPresionAltitud = ({ datos }) => {
       rotatelabels: '1',
       setadaptiveymin: '1',
       theme: 'fusion',
+      anchorbgcolor: '#72D7B2',
+      palettecolors: '#5cb192',
     },
     data: [],
   });
