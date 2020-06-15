@@ -10,7 +10,7 @@ const MyCardD = ({ nave }) => {
 
   const presionValores = sensorPresion.datosSensor;
   const altitudValor = presionValores[presionValores.length - 1].datoSensor.altitud;
-  const presionValor = presionValores[presionValores.length - 1].datoSensor.Presion;
+  const presionValor = presionValores[presionValores.length - 1].datoSensor.presion;
 
   const DHT11Valores = sensorDHT11.datosSensor;
   const humedadValor = DHT11Valores[DHT11Valores.length - 1].datoSensor.humedad;
