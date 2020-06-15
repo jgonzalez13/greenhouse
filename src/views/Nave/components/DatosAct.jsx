@@ -13,8 +13,8 @@ const MyCardD = ({ nave }) => {
   const presionValor = presionValores[presionValores.length - 1].datoSensor.Presion;
 
   const DHT11Valores = sensorDHT11.datosSensor;
-  const humedadValor = DHT11Valores[DHT11Valores.length - 1].datoSensor.humedad;
-  const temperaturaValor = DHT11Valores[DHT11Valores.length - 1].datoSensor.temperatura;
+  const humedadValor = DHT11Valores[DHT11Valores.length - 1]?.datoSensor.humedad;
+  const temperaturaValor = DHT11Valores[DHT11Valores.length - 1]?.datoSensor.temperatura;
 
   const imgRandom = `https://source.unsplash.com/1600x900/?nature,water`;
 

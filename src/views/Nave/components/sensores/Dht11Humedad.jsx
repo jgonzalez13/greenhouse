@@ -32,7 +32,7 @@ const Dht11Humedad = ({ datos }) => {
     const newData = datos.map((item) => {
       return {
         label: item.idDatoSensor,
-        value: item.datoSensor.humedad,
+        value: item.datoSensor.humedad || 0,
       };
     });
     setData({ ...data, data: newData });

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import FormNave from './Forms/FormNave';
+import ModalDelete from 'shared/ModalDelete';
 import Modal from 'shared/FormModal';
-import Firebase from 'services/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faTrash, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { NaveValidations } from './Forms/NaveValidation';
@@ -11,18 +11,17 @@ import './Card.css';
 
 const MyCard = ({ nave }) => {
   const [modal, setModal] = useState(false);
+  const [modalDelete, setModalDelete] = useState(false);
   const history = useHistory();
   const { nombreNave, idNave, rutaNave } = nave;
   const imgRandom = `https://source.unsplash.com/1600x900/?nature,water`;
 
   const toggleModal = () => setModal(!modal);
 
-  function toNaveView() {
-    history.push({ pathname: `naves/${idNave}`, state: { id: nave.idNave } });
-  }
+  const toggleModalDelete = () => setModalDelete(!modalDelete);
 
-  function deleteNave() {
-    Firebase.removeNave(nave.idNave);
+  function toNaveView() {
+    history.push({ pathname: `naves/${idNave}`, state: { id: idNave } });
   }
 
   return (
@@ -51,7 +50,7 @@ const MyCard = ({ nave }) => {
         <Button className="btn-block text-center" color="info" onClick={toggleModal}>
           <FontAwesomeIcon icon={faPencilAlt} className="mr-2"></FontAwesomeIcon>EDITAR
         </Button>
-        <Button className="RojoCoqueto btn-block text-center" color="transparent" onClick={deleteNave}>
+        <Button className="RojoCoqueto btn-block text-center" color="transparent" onClick={toggleModalDelete}>
           <FontAwesomeIcon icon={faTrash} className="mr-2"></FontAwesomeIcon> ELIMINAR
         </Button>
 
@@ -64,6 +63,8 @@ const MyCard = ({ nave }) => {
         >
           {({ values }) => <FormNave idNave={values.idNave} edit={true} />}
         </Modal>
+
+        <ModalDelete modal={modalDelete} toggle={toggleModalDelete} title="Eliminar Nave" idNave={idNave} />
       </CardBody>
     </Card>
   );

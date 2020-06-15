@@ -30,15 +30,17 @@ const Nave = ({ location }) => {
           <div className="bb">
             <NaveDatos className="bb1" nave={nave} />
 
-            <MyCardD nave={nave} />
+            {nave.sensores.sensorFotocelda?.datosSensor &&
+              nave.sensores.sensorDHT11?.datosSensor &&
+              nave.sensores.sensorPresion?.datosSensor && <MyCardD nave={nave} />}
           </div>
-          {nave.sensores.sensorFotocelda.status && (
+          {nave.sensores.sensorFotocelda.status && nave.sensores.sensorFotocelda?.datosSensor && (
             <InfoSensor sensor={nave.sensores.sensorFotocelda} name="FotoCelda">
               <FotoCelda datos={nave.sensores.sensorFotocelda.datosSensor} />
             </InfoSensor>
           )}
 
-          {nave.sensores.sensorDHT11.status && (
+          {nave.sensores.sensorDHT11.status && nave.sensores.sensorDHT11?.datosSensor && (
             <InfoSensor
               sensor={nave.sensores.sensorDHT11}
               twoValues={true}
@@ -56,7 +58,7 @@ const Nave = ({ location }) => {
             </InfoSensor>
           )}
 
-          {nave.sensores.sensorPresion.status && (
+          {nave.sensores.sensorPresion.status && nave.sensores.sensorPresion?.datosSensor && (
             <InfoSensor
               sensor={nave.sensores.sensorPresion}
               twoValues={true}
