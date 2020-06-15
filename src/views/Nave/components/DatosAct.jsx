@@ -30,6 +30,9 @@ const MyCardD = ({ nave }) => {
         <CardSubtitle className="border-car mb-5">
           <div className="n">
             <h5>Humedad: {humedadValor}</h5>
+          </div>
+
+          <div className="n">
             <h5>Temperatura: {temperaturaValor}</h5>
           </div>
 
@@ -39,6 +42,8 @@ const MyCardD = ({ nave }) => {
 
           <div className="n">
             <h5>Altitud: {altitudValor}</h5>
+          </div>
+          <div className="n">
             <h5>Presion: {presionValor}</h5>
           </div>
         </CardSubtitle>
