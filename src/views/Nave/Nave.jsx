@@ -1,6 +1,10 @@
 import React from 'react';
 import InfoSensor from './components/InfoSensor';
 import NaveDatos from './components/NaveDatos';
+import Dht11Humedad from './components/sensores/Dht11Humedad';
+import Dht11Temperatura from './components/sensores/Dht11Temperatura';
+import SensorPresioPresion from './components/sensores/SensorPresionPresion';
+import SensorPresionAltitud from './components/sensores/SensorPresionAltitud';
 import './Nave.css';
 import FotoCelda from './components/sensores/FotoCelda';
 
@@ -33,19 +37,15 @@ const Nave = ({ location }) => {
         <FotoCelda datos={sensorFotocelda.datosSensor} />
       </InfoSensor>
 
-      {/* <InfoSensor sensor={sensorFotocelda} name="DHT11">
+      <InfoSensor sensor={sensorFotocelda} name="DHT11">
         <Dht11Humedad datos={sensorDHT11.datosSensor} />
         <Dht11Temperatura datos={sensorDHT11.datosSensor} />
-      </InfoSensor> */}
-      {/* <FotoCelda datos={sensorFotocelda.datosSensor} />
+      </InfoSensor>
 
-      <Dht11Humedad datos={sensorDHT11.datosSensor} />
-      <Dht11Temperatura datos={sensorDHT11.datosSensor} />
-      <div>--------------------</div>
-      <SensorPresioPresion datos={sensorPresion.datosSensor} />
-      <SensorPresionAltitud datos={sensorPresion.datosSensor} />
-      <div>--------------------</div>
-      <Tabla datos={sensorFotocelda.datosSensor} /> */}
+      <InfoSensor sensor={sensorFotocelda} name="BMP180">
+        <SensorPresioPresion datos={sensorPresion.datosSensor} />
+        <SensorPresionAltitud datos={sensorPresion.datosSensor} />
+      </InfoSensor>
     </div>
   );
 };
