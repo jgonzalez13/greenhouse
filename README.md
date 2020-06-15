@@ -14,7 +14,7 @@ open http://localhost:3000/
 ### Nota 
 Si el Front no llegara a funcionar instalar
 ```
-npm install -g create-react-ap
+npm install -g create-react-app
 ```
 
 ## Arduino
