@@ -17,6 +17,7 @@ const SensorPresionPresion = ({ datos }) => {
       theme: 'fusion',
       anchorbgcolor: '#72D7B2',
       palettecolors: '#5cb192',
+      showvalues: '0',
     },
     data: [],
   });

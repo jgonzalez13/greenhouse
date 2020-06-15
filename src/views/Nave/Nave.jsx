@@ -10,6 +10,8 @@ import './Nave.css';
 import FotoCelda from './components/sensores/FotoCelda';
 import { useEffect } from 'react';
 
+import MyCardD from './components/DatosAct';
+
 const Nave = ({ location }) => {
   const [nave, setNave] = useState();
   const { naves } = useContext(UserStore);
@@ -25,7 +27,11 @@ const Nave = ({ location }) => {
     <div className="D">
       {nave && (
         <>
-          <NaveDatos nave={nave} />
+          <div className="bb">
+            <NaveDatos className="bb1" nave={nave} />
+
+            <MyCardD nave={nave} />
+          </div>
 
           <InfoSensor sensor={nave.sensores.sensorFotocelda} name="FotoCelda">
             <FotoCelda datos={nave.sensores.sensorFotocelda.datosSensor} />
