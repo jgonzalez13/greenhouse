@@ -46,8 +46,13 @@ const Nave = ({ location }) => {
               firstValue="humedad"
               secondValue="temperatura"
             >
-              <Dht11Humedad datos={nave.sensores.sensorDHT11.datosSensor} />
-              <Dht11Temperatura datos={nave.sensores.sensorDHT11.datosSensor} />
+              <div className="mb-2">
+                <Dht11Humedad datos={nave.sensores.sensorDHT11.datosSensor} />
+              </div>
+
+              <div>
+                <Dht11Temperatura datos={nave.sensores.sensorDHT11.datosSensor} />
+              </div>
             </InfoSensor>
           )}
 
@@ -59,8 +64,12 @@ const Nave = ({ location }) => {
               firstValue="presion"
               secondValue="altitud"
             >
-              <SensorPresioPresion datos={nave.sensores.sensorPresion.datosSensor} />
-              <SensorPresionAltitud datos={nave.sensores.sensorPresion.datosSensor} />
+              <div className="mb-2">
+                <SensorPresioPresion datos={nave.sensores.sensorPresion.datosSensor} />
+              </div>
+              <div>
+                <SensorPresionAltitud datos={nave.sensores.sensorPresion.datosSensor} />
+              </div>
             </InfoSensor>
           )}
         </>
