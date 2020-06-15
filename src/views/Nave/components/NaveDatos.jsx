@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Card, CardBody, CardTitle, CardSubtitle, Button, Container, Row, Col, Label, Input } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import FormNave from 'views/Naves/components/Forms/FormNave';
 import Modal from 'shared/FormModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { NaveValidations } from 'views/Naves/components/Forms/NaveValidation';
+import ActivateSensores from './ActivateSensores';
 
 const MyCard = ({ nave }) => {
   const [modal, setModal] = useState(false);
@@ -29,25 +30,7 @@ const MyCard = ({ nave }) => {
           nihil.
         </CardSubtitle>
 
-        <Container className="mx-auto">
-          <Row xs="1">
-            <Col>
-              <Label check>
-                <Input type="checkbox" /> Sensor DHT11
-              </Label>
-            </Col>
-            <Col>
-              <Label check>
-                <Input type="checkbox" /> Sensor BMP180
-              </Label>
-            </Col>
-            <Col>
-              <Label check>
-                <Input type="checkbox" /> Sensor Fotocelda
-              </Label>
-            </Col>
-          </Row>
-        </Container>
+        <ActivateSensores />
 
         <CardSubtitle className="p mb-2 text-right ml-auto locate">
           <i>{rutaNave}</i>

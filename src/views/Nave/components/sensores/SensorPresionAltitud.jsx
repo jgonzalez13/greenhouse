@@ -24,7 +24,7 @@ const SensorPresionAltitud = ({ datos }) => {
   useEffect(() => {
     createData();
     // eslint-disable-next-line
-  }, []);
+  }, [datos]);
 
   function createData() {
     const newData = datos.map((item) => {
@@ -35,7 +35,6 @@ const SensorPresionAltitud = ({ datos }) => {
     });
     setData({ ...data, data: newData });
   }
-  console.log(data);
   return <ReactFusioncharts type="line" width="100%" height="40%" dataFormat="JSON" dataSource={data} />;
 };
 

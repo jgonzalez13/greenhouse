@@ -1,7 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBan, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
-import { Button } from 'reactstrap';
 
 const InfoSensor = ({ children, sensor, name }) => {
   const {
@@ -18,8 +15,8 @@ const InfoSensor = ({ children, sensor, name }) => {
       <div className="titulo text-center">
         <h2>{name}</h2>
       </div>
-      <div className="sectionDATEs ">
-        <div className="pl-5 text-left mt-r pt-3">
+      <div className="sectionDATEs">
+        <div className="pl-5 text-left mt-r pt-3 max-width-30">
           <h5>ID: {idSensor}</h5>
           <h5>Tipo: {tipoSensor}</h5>
           <h3>Valor Maximo: {valorMaximoSensor}</h3>

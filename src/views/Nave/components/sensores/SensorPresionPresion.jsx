@@ -35,7 +35,7 @@ const SensorPresionPresion = ({ datos }) => {
     });
     setData({ ...data, data: newData });
   }
-  console.log(data);
+
   return <ReactFusioncharts type="line" width="100%" height="40%" dataFormat="JSON" dataSource={data} />;
 };
 

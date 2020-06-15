@@ -17,7 +17,7 @@ const MyCard = ({ nave }) => {
   const toggleModal = () => setModal(!modal);
 
   function toNaveView() {
-    history.push({ pathname: `naves/${idNave}`, state: { nave: nave } });
+    history.push({ pathname: `naves/${idNave}`, state: { id: nave.idNave } });
   }
 
   return (

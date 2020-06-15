@@ -23,6 +23,7 @@ const FotoCelda = ({ datos }) => {
 
   useEffect(() => {
     createData();
+
     // eslint-disable-next-line
   }, [datos]);
 

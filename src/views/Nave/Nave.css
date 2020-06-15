@@ -50,6 +50,9 @@ body {
   font-size: 2em;
   margin: 1px;
 }
+.max-width-30 {
+  max-width: 30%;
+}
 .msw {
   display: flex;
   justify-content: center;
@@ -83,4 +86,9 @@ body {
 
 .box-shadooww {
   box-shadow: 2px 5px 10px rgb(0, 0, 0, 0.3);
+}
+
+.sectionDATEs svg {
+  background-color: #182026 !important;
+  color: white !important;
 }

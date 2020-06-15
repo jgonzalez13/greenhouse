@@ -1,29 +1,11 @@
-import React, { useState, useEffect, useContext, useCallback } from 'react';
+import React, { useContext } from 'react';
 import { UserStore } from 'containers/context/User.context';
-import firebase from 'services/firebase';
 import MyCard from './components/Card';
 import AddNaveCard from './components/AddNaveCard';
 import Spin from 'shared/Spin';
 
 const Naves = () => {
-  const { setUser } = useContext(UserStore);
-  const [naves, setNaves] = useState([]);
-
-  const getNaves = useCallback(() => {
-    firebase.db.ref('naves').on('value', (snapShot) => {
-      const allNaves = [];
-      snapShot.forEach((snap) => {
-        allNaves.push(snap.val());
-      });
-
-      setUser({ type: 'updateUser', payload: { naves: allNaves } });
-      setNaves(allNaves);
-    });
-  }, [setUser]);
-
-  useEffect(() => {
-    getNaves();
-  }, [getNaves]);
+  const { naves } = useContext(UserStore);
 
   if (!naves.length) return <Spin />;
 
