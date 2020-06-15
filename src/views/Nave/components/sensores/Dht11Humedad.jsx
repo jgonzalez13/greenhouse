@@ -17,6 +17,8 @@ const Dht11Humedad = ({ datos }) => {
       theme: 'fusion',
       anchorbgcolor: '#72D7B2',
       palettecolors: '#5cb192',
+      legendposition: 'Right',
+      showvalues: '0',
     },
     data: [],
   });
