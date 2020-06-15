@@ -5,7 +5,7 @@ import Firebase from 'services/firebase';
 
 const FormModal = ({ children, initialValues, modal, title, toggle, validationSchema }) => {
   const onCompletForm = (values) => {
-    Firebase.createNave(values.idNave, values, values.reset);
+    Firebase.createNave(values.idNave, values, !values.reset);
     toggle();
   };
 
