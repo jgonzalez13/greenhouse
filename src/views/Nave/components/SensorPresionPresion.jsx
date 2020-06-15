@@ -8,13 +8,15 @@ charts(FusionCharts);
 const SensorPresionPresion = ({ datos }) => {
   const [data, setData] = useState({
     chart: {
-      caption: 'Intensidad de luz',
+      caption: 'PRESION',
       yaxisname: 'INTENSIDAD',
       subcaption: '[FOTOCELDA]',
       numbersuffix: '',
       rotatelabels: '1',
       setadaptiveymin: '1',
       theme: 'fusion',
+      anchorbgcolor: '#72D7B2',
+      palettecolors: '#5cb192',
     },
     data: [],
   });

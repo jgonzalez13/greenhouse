@@ -8,13 +8,15 @@ charts(FusionCharts);
 const Dht11Humedad = ({ datos }) => {
   const [data, setData] = useState({
     chart: {
-      caption: 'Humedad',
+      caption: 'HUMEDAD',
       yaxisname: 'NIVEL de HUMEDAD',
       subcaption: '[DHT11]',
       numbersuffix: '',
       rotatelabels: '1',
       setadaptiveymin: '1',
       theme: 'fusion',
+      anchorbgcolor: '#72D7B2',
+      palettecolors: '#5cb192',
     },
     data: [],
   });
