@@ -1,10 +1,20 @@
 import React from 'react';
 import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 
-const MyCardD = ({ nave, datos }) => {
-  const { idNave } = nave;
-  const fotoCeldaValores = nave.sensores.sensorFotoCelda?.datosSensor;
-  const fotoCeldaValor = nave.sensores.sensorFotoCelda?.datosSensor[fotoCeldaValores.lenght - 1];
+const MyCardD = ({ nave }) => {
+  const { idNave, sensores } = nave;
+  const { sensorFotocelda, sensorPresion, sensorDHT11 } = sensores;
+
+  const fotoCeldaValores = sensorFotocelda.datosSensor;
+  const fotoCeldaValor = fotoCeldaValores[fotoCeldaValores.length - 1].datoSensor;
+
+  const presionValores = sensorPresion.datosSensor;
+  const altitudValor = presionValores[presionValores.length - 1].datoSensor.altitud;
+  const presionValor = presionValores[presionValores.length - 1].datoSensor.Presion;
+
+  const DHT11Valores = sensorDHT11.datosSensor;
+  const humedadValor = DHT11Valores[DHT11Valores.length - 1].datoSensor.humedad;
+  const temperaturaValor = DHT11Valores[DHT11Valores.length - 1].datoSensor.temperatura;
 
   return (
     <Card className="bb2 bg-light border-light card-shadow box-shadooww">
@@ -18,29 +28,18 @@ const MyCardD = ({ nave, datos }) => {
           </CardTitle>
         </div>
         <CardSubtitle className="border-car mb-5">
-          <div>
-            <h5 className="borderp">
-              Datos Actuales SENSOR DHT11
-              <div className="n">
-                <h5>Humedad: 12</h5>
-                <h5>Temperatura: 123</h5>
-              </div>
-            </h5>
+          <div className="n">
+            <h5>Humedad: {humedadValor}</h5>
+            <h5>Temperatura: {temperaturaValor}</h5>
           </div>
-          <div>
-            <h5 className="borderp">
-              Datos Actuales SENSOR FOTOCELDA
-              <h5 className="n">Nivel de Luz: {fotoCeldaValor}</h5>
-            </h5>
+
+          <div className="n">
+            <h5>Nivel de Luz: {fotoCeldaValor}</h5>
           </div>
-          <div>
-            <h5 className="borderp ">
-              Datos Actuales SENSOR PRESION
-              <div className="n">
-                <h5>Altitud: 213</h5>
-                <h5>Presion: 1323</h5>
-              </div>
-            </h5>
+
+          <div className="n">
+            <h5>Altitud: {altitudValor}</h5>
+            <h5>Presion: {presionValor}</h5>
           </div>
         </CardSubtitle>
       </CardBody>
