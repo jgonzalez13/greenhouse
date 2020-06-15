@@ -50,7 +50,7 @@ double  ALTITUDE = 550.0; // Altitude in meters
 
     
 //Info nave
-const String idNave = "0004";
+const String idNave = "0004"; // change
 
 int registerDHT11 = 0;
 int registerFotocelda = 0;
