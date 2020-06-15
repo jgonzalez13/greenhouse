@@ -16,7 +16,7 @@ const ModalDelete = ({ modal, toggle, title, idNave }) => {
       </ModalBody>
       <ModalFooter>
         <Button type="submit" color="info" onClick={onDeleteNave}>
-          Guardar
+          Eliminar
         </Button>
         <Button color="transparent" className="RojoCoqueto" onClick={toggle}>
           Cancel
