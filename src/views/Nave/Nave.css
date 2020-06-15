@@ -88,11 +88,6 @@ body {
   box-shadow: 2px 5px 10px rgb(0, 0, 0, 0.3);
 }
 
-.sectionDATEs svg {
-  background-color: #182026 !important;
-  color: white !important;
-}
-
 .bb {
   display: flex;
 }
