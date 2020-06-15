@@ -65,6 +65,11 @@ code {
   color: #17a2b8 !important;
 }
 
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs {
+  cursor: pointer !important;
+}
+
 .modal-dialog {
   max-width: 700px !important;
 }
