@@ -7,6 +7,7 @@ body {
   max-height: 100vh;
 }
 .D {
+  padding: 40px;
   z-index: 1;
   overflow: auto;
   display: flex;
@@ -34,9 +35,10 @@ body {
   border-bottom: 3px solid rgba(138, 138, 138, 0.671);
 }
 .datos-n {
-  margin: 20px;
+  background-color: white;
+  margin-top: 40px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 0.25rem;
   box-shadow: 2px 5px 10px rgb(0, 0, 0, 0.3);
 }
 .sectionDATEs {
@@ -77,4 +79,8 @@ body {
 
 .da {
   margin-left: 20px;
+}
+
+.box-shadooww {
+  box-shadow: 2px 5px 10px rgb(0, 0, 0, 0.3);
 }

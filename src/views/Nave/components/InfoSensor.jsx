@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBan, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'reactstrap';
 
-const InfoSensor = ({ children, sensor }) => {
+const InfoSensor = ({ children, sensor, name }) => {
   const {
     idSensor,
     msgValorMaximoSensor,
@@ -16,18 +16,7 @@ const InfoSensor = ({ children, sensor }) => {
   return (
     <div className="datos-n bg-light">
       <div className="titulo text-center">
-        <h2>Datos Sensor</h2>
-      </div>
-      <div className="titulo2">
-        <div className="item">
-          <h1>Opciones</h1>
-        </div>
-        <div className="item">
-          <h1>Presentacion Grafica</h1>
-        </div>
-        <div className="item">
-          <h1>Datos</h1>
-        </div>
+        <h2>{name}</h2>
       </div>
       <div className="sectionDATEs ">
         <div className="pl-5 text-left mt-r pt-3">
@@ -39,18 +28,6 @@ const InfoSensor = ({ children, sensor }) => {
           <h5>mensaje: {msgValorMinimoSensor}</h5>
         </div>
         <div>{children}</div>
-        <div className="p-5 mx-auto mt-l ">
-          <div className="msw">
-            <div className="mx-auto">
-              <Button color="danger" className="mr-5">
-                <FontAwesomeIcon icon={faBan} size="sm" className="mr-2" />
-              </Button>
-              <Button color="info" className="mr-5">
-                <FontAwesomeIcon icon={faPencilAlt} size="sm" className="mr-2" />
-              </Button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

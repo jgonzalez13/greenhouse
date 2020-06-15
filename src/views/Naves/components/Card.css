@@ -57,3 +57,7 @@
   background-color: #4bb543 !important;
   color: white !important;
 }
+
+.border-card-black {
+  border: 1px solid #182026;
+}
