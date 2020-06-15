@@ -12,7 +12,7 @@ open http://localhost:3000/
 ```
 
 ### Nota 
-Si React el front no llegara a funcionar instalar
+Si el Front no llegara a funcionar instalar
 ```
 npm install -g create-react-ap
 ```
