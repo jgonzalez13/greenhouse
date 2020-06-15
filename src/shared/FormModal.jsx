@@ -19,7 +19,7 @@ const FormModal = ({ children, initialValues, modal, title, toggle, validationSc
             <ModalFooter>
               <Button type="submit" color="info">
                 Guardar
-              </Button>{' '}
+              </Button>
               <Button color="transparent" className="RojoCoqueto" onClick={toggle}>
                 Cancel
               </Button>

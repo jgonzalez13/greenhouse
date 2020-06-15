@@ -9,7 +9,7 @@ import ActivateSensores from './ActivateSensores';
 
 const MyCard = ({ nave }) => {
   const [modal, setModal] = useState(false);
-  const { nombreNave, idNave, rutaNave } = nave;
+  const { nombreNave, idNave, rutaNave, sensores, reset } = nave;
 
   const toggleModal = () => setModal(!modal);
 
@@ -30,7 +30,7 @@ const MyCard = ({ nave }) => {
           nihil.
         </CardSubtitle>
 
-        <ActivateSensores />
+        <ActivateSensores idNave={idNave} reset={reset} sensores={sensores} />
 
         <CardSubtitle className="p mb-2 text-right ml-auto locate mt-auto">
           <i>{rutaNave}</i>

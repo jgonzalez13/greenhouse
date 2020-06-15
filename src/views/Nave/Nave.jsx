@@ -32,32 +32,37 @@ const Nave = ({ location }) => {
 
             <MyCardD nave={nave} />
           </div>
+          {nave.sensores.sensorFotocelda.status && (
+            <InfoSensor sensor={nave.sensores.sensorFotocelda} name="FotoCelda">
+              <FotoCelda datos={nave.sensores.sensorFotocelda.datosSensor} />
+            </InfoSensor>
+          )}
 
-          <InfoSensor sensor={nave.sensores.sensorFotocelda} name="FotoCelda">
-            <FotoCelda datos={nave.sensores.sensorFotocelda.datosSensor} />
-          </InfoSensor>
+          {nave.sensores.sensorDHT11.status && (
+            <InfoSensor
+              sensor={nave.sensores.sensorDHT11}
+              twoValues={true}
+              name="DHT11"
+              firstValue="humedad"
+              secondValue="temperatura"
+            >
+              <Dht11Humedad datos={nave.sensores.sensorDHT11.datosSensor} />
+              <Dht11Temperatura datos={nave.sensores.sensorDHT11.datosSensor} />
+            </InfoSensor>
+          )}
 
-          <InfoSensor
-            sensor={nave.sensores.sensorDHT11}
-            twoValues={true}
-            name="DHT11"
-            firstValue="humedad"
-            secondValue="temperatura"
-          >
-            <Dht11Humedad datos={nave.sensores.sensorDHT11.datosSensor} />
-            <Dht11Temperatura datos={nave.sensores.sensorDHT11.datosSensor} />
-          </InfoSensor>
-
-          <InfoSensor
-            sensor={nave.sensores.sensorPresion}
-            twoValues={true}
-            name="BMP180"
-            firstValue="presion"
-            secondValue="altitud"
-          >
-            <SensorPresioPresion datos={nave.sensores.sensorPresion.datosSensor} />
-            <SensorPresionAltitud datos={nave.sensores.sensorPresion.datosSensor} />
-          </InfoSensor>
+          {nave.sensores.sensorPresion.status && (
+            <InfoSensor
+              sensor={nave.sensores.sensorPresion}
+              twoValues={true}
+              name="BMP180"
+              firstValue="presion"
+              secondValue="altitud"
+            >
+              <SensorPresioPresion datos={nave.sensores.sensorPresion.datosSensor} />
+              <SensorPresionAltitud datos={nave.sensores.sensorPresion.datosSensor} />
+            </InfoSensor>
+          )}
         </>
       )}
     </div>

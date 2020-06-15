@@ -10,8 +10,22 @@ class Firebase {
     this.db = app.database();
   }
 
-  createNave(id, data) {
-    this.db.ref(`naves/nave${id}`).set(data)
+  createNave(id, data, resetValue) {
+    this.db.ref(`naves/nave${id}`).set(data);
+    this.restartESP8266(id, resetValue);
+  }
+
+  updateSensor(id, name, value, resetValue) {
+    this.db.ref(`naves/nave${id}/sensores/${name}/status`).set(value);
+    this.restartESP8266(id, resetValue);
+  }
+
+  removeNave(id) {
+    this.db.ref(`naves/nave${id}`).set({ idNave: id, status: false, reset: false });
+  }
+
+  restartESP8266(id, value) {
+    this.db.ref(`naves/nave${id}/reset`).set(value);
   }
 }
 

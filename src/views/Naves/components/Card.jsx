@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import FormNave from './Forms/FormNave';
 import Modal from 'shared/FormModal';
+import Firebase from 'services/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faTrash, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { NaveValidations } from './Forms/NaveValidation';
@@ -18,6 +19,10 @@ const MyCard = ({ nave }) => {
 
   function toNaveView() {
     history.push({ pathname: `naves/${idNave}`, state: { id: nave.idNave } });
+  }
+
+  function deleteNave() {
+    Firebase.removeNave(nave.idNave);
   }
 
   return (
@@ -46,7 +51,7 @@ const MyCard = ({ nave }) => {
         <Button className="btn-block text-center" color="info" onClick={toggleModal}>
           <FontAwesomeIcon icon={faPencilAlt} className="mr-2"></FontAwesomeIcon>EDITAR
         </Button>
-        <Button className="RojoCoqueto btn-block text-center" color="transparent">
+        <Button className="RojoCoqueto btn-block text-center" color="transparent" onClick={deleteNave}>
           <FontAwesomeIcon icon={faTrash} className="mr-2"></FontAwesomeIcon> ELIMINAR
         </Button>
 

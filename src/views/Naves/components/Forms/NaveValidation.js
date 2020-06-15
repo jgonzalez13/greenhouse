@@ -1,6 +1,7 @@
 import * as yup from 'yup';
 
 const initialValues = {
+  reset: false,
   idNave: '',
   nombreNave: '',
   location: '',
