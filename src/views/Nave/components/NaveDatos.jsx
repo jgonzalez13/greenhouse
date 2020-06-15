@@ -32,7 +32,7 @@ const MyCard = ({ nave }) => {
 
         <ActivateSensores />
 
-        <CardSubtitle className="p mb-2 text-right ml-auto locate">
+        <CardSubtitle className="p mb-2 text-right ml-auto locate mt-auto">
           <i>{rutaNave}</i>
         </CardSubtitle>
 

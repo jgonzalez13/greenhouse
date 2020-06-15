@@ -73,3 +73,9 @@ code {
 .modal-dialog {
   max-width: 700px !important;
 }
+
+.imgCard-banner {
+  width: 60% !important;
+  margin-left: auto !important;
+  padding: 0 !important;
+}
